@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "email-to-whatsapp-mom-bills"
+version = "0.1.0"
+description = ""
+authors = ["Vinicius999 <viniciussilva.dsc@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
