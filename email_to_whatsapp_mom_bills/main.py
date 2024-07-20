@@ -8,9 +8,14 @@ load_dotenv()
 EMAIL_USER = os.getenv('EMAIL_USER')
 EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
 
-# Get date and subject of all emails from INBOX folder
-with MailBox('imap.gmail.com').login(EMAIL_USER, EMAIL_PASSWORD) as mailbox:
-    for msg in mailbox.fetch(AND(from_='faturabradescard@infobradesco.com.br', seen=False)):
-        print(msg.date.strftime('%Y-%m-%d %H:%M'), msg.subject)
-        
-        
+mailbox = MailBox('imap.gmail.com').login(EMAIL_USER, EMAIL_PASSWORD)
+
+for email in mailbox.fetch(AND(from_='faturabradescard@infobradesco.com.br', seen=False)):
+    if len(email.attachments) > 0:
+        for attachment in email.attachments:
+            if 'FATURA MENSAL' in attachment.filename:
+                attachment_info = attachment.payload
+                print('Writting the pdf file...')
+                with open('email_to_whatsapp_mom_bills/media/blocked_invoice.pdf', 'wb') as file:
+                    file.write(attachment_info)
+
