@@ -4,9 +4,9 @@
 
 Status | Task | 
 :------------ | :-------------|
-:heavy_check_mark: | Login email |
-:white_check_mark: | Search the correct email |
-:white_check_mark: | Unblock and save PDF |
-:white_check_mark: | Open PDF and Save Bar code |
-:white_check_mark: | Send ublocked PDF and Bar code to Mom |
-:white_check_mark: | Run automation |
+:white_check_mark: | Login email |
+:heavy_check_mark: | Search the correct email |
+:heavy_check_mark: | Unblock and save PDF |
+:heavy_check_mark: | Open PDF and Save Bar code |
+:heavy_check_mark: | Send ublocked PDF and Bar code to Mom |
+:heavy_check_mark: | Run automation |
