@@ -8,10 +8,9 @@ load_dotenv()
 EMAIL_USER = os.getenv('EMAIL_USER')
 EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
 
-# my_email = MailBox('imap.gmail.com').login(EMAIL_USER, EMAIL_PASSWORD)
-# print()
-
-# Get date, subject and body len of all emails from INBOX folder
+# Get date and subject of all emails from INBOX folder
 with MailBox('imap.gmail.com').login(EMAIL_USER, EMAIL_PASSWORD) as mailbox:
-    for msg in mailbox.fetch():
-        print(msg.date, msg.subject, len(msg.text or msg.html))
+    for msg in mailbox.fetch(AND(from_='faturabradescard@infobradesco.com.br', seen=False)):
+        print(msg.date.strftime('%Y-%m-%d %H:%M'), msg.subject)
+        
+        
