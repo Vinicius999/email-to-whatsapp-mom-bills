@@ -22,5 +22,7 @@ def get_invoive() -> None:
                         file.write(attachment_info)
 
 
-get_invoive()
-print('Done!')
+if __name__ == '__main__':
+    get_invoive()
+    print('Done!')
+    
