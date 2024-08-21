@@ -80,7 +80,7 @@ if __name__ == '__main__':
             phone_no=MOTHER_PHONE_NUMBER,
             message=f'Linha digitável do boleto: \n{digitable_bar_code}',
             time_hour=10,
-            time_min=13,
+            time_min=12,
             wait_time=20,
             tab_close=True
         )

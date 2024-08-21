@@ -11,3 +11,7 @@ Status | Task |
 :white_check_mark: | Open PDF and save Bar code |
 :eyes: | Send ublocked PDF and Bar code to Mom |
 :zzz: | Run automation |
+
+**OBS:** For automation, we have 2 simples options:
+- Windows schedule
+- WSL > Crontab 
