@@ -63,24 +63,36 @@ def extract_bar_code(pdf_file_path) -> str:
     return
 
 
+def customize_message(bar_code: str) -> None:
+    message = f"""
+    \U0001F447 código de barras \U0001F447 \n\n{bar_code}\n\n\U0001F446 código de barras \U0001F446 
+    """
+    return message
+
 
 
 if __name__ == '__main__':
-    # get_invoive()
-    # print('Invoice saved from email!')
-    # unlock_pdf()
-    # print('PDF decrypted!')
+    get_invoive()
+    print('Invoice saved from email!')
+
+    unlock_pdf()
+    print('PDF decrypted!')
+
     path = 'email_to_whatsapp_mom_bills/refined_data/invoice.pdf'
     digitable_bar_code = extract_bar_code(path)
+    print(MOTHER_PHONE_NUMBER)
 
-    if extract_bar_code(path):
+
+    if digitable_bar_code:
         print(f'Linha Digitável encontrada: {digitable_bar_code}')
+
+        message = transform_message(bar_code=digitable_bar_code)
 
         kit.sendwhatmsg(
             phone_no=MOTHER_PHONE_NUMBER,
-            message=f'Linha digitável do boleto: \n{digitable_bar_code}',
-            time_hour=10,
-            time_min=12,
+            message=message,
+            time_hour=16,
+            time_min=53,
             wait_time=20,
             tab_close=True
         )
@@ -88,6 +100,7 @@ if __name__ == '__main__':
     else:
         print(f'Linha Digitável não encontrada.')
         
+
         
         
         
